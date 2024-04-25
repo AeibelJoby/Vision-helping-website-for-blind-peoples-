@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Registration Form</title>
+   <link rel="stylesheet" type="text/css" href="{% static 'assets/css/log.css'%}">
+</head>
+<body>
+    <div class="background">
+      <form action="" method="POST" >
+        {% csrf_token %}
+        {% for i in messages %}
+        <h2 style="color:red">{{i}}</h2>
+        {% endfor %}
+        <h2>Sign Up</h2>
+
+        <div class="input-group">
+          <input type="text" class="form-control" name="F_name" id="contact-name" placeholder="Name" required>
+          <label for="">Username</label>
+        </div>
+        <div class="input-group">
+          <input type="email" class="form-control" name="Email" id="contact-email" placeholder="Email" required>
+          <label for="">Email</label>
+        </div>
+        <div class="input-group">
+          <input type="password" class="form-control" name="Password" placeholder="Password" required>
+          <label for="">Password</label>
+        </div>
+        <div class="input-group">
+          <input type="password" name="Confirm_password" placeholder="Confirm_password" required>
+          <label for="">Confirm Password</label>
+        </div>
+        {% comment %} <div class="remember"> {% endcomment %}
+          {% comment %} <label><input type="checkbox"> I agree to the terms & conditions</label> {% endcomment %}
+        {% comment %} </div> {% endcomment %}
+        <button type="submit">Sign Up</button>
+        <div class="signUp-link">
+          <p>Already have an account? <a href="log" class="signInBtn-link">Sign In</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+  {% comment %} <script src="script.js"></script> {% endcomment %}
+  <script src="{% static 'assets/js/log.js'%}"></script>
+
+</body>
+</html>
